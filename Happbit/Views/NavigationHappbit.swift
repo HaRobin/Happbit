@@ -10,10 +10,10 @@ import SwiftUI
 struct NavigationHappbit: View {
     var body: some View {
         TabView {
-
-//                .tabItem{
-//                    Label("Home", systemImage: "house.fill")
-//                }
+            HabitListView()
+                .tabItem{
+                    Label("Home", systemImage: "house.fill")
+                }
 //                .tabItem{
 //                    Label("Stats", systemImage: "arrow.up.right.circle")
 //                }
