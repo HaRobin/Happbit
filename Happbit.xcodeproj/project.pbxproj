@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */; };
+		B49827EC2BA1AE580056FCF9 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49827EB2BA1AE580056FCF9 /* HabitListView.swift */; };
 		B4AD45512B987A92006EB59D /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45502B987A92006EB59D /* Habit.swift */; };
 		B4AD45532B987C30006EB59D /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45522B987C30006EB59D /* HabitViewModel.swift */; };
 		B4AD45552B9881EF006EB59D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45542B9881EF006EB59D /* History.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHappbit.swift; sourceTree = "<group>"; };
+		B49827EB2BA1AE580056FCF9 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		B4AD45502B987A92006EB59D /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		B4AD45522B987C30006EB59D /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		B4AD45542B9881EF006EB59D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */,
 				C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */,
+				B49827EB2BA1AE580056FCF9 /* HabitListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49827EC2BA1AE580056FCF9 /* HabitListView.swift in Sources */,
 				B4AD45512B987A92006EB59D /* Habit.swift in Sources */,
 				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
 				B4AD45572B9882A7006EB59D /* HistoryViewModel.swift in Sources */,
