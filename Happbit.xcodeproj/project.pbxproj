@@ -16,6 +16,7 @@
 		C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA73C2B9878EF00E72371 /* ContentView.swift */; };
 		C05BA73F2B9878F000E72371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05BA73E2B9878F000E72371 /* Assets.xcassets */; };
 		C05BA7422B9878F000E72371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05BA7412B9878F000E72371 /* Preview Assets.xcassets */; };
+		C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C05BA73C2B9878EF00E72371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C05BA73E2B9878F000E72371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C05BA7412B9878F000E72371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */,
+				C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AD45512B987A92006EB59D /* Habit.swift in Sources */,
+				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
 				B4AD45572B9882A7006EB59D /* HistoryViewModel.swift in Sources */,
 				C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */,
 				B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */,
