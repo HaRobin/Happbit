@@ -14,9 +14,10 @@ struct NavigationHappbit: View {
                 .tabItem{
                     Label("Home", systemImage: "house.fill")
                 }
-//                .tabItem{
-//                    Label("Stats", systemImage: "arrow.up.right.circle")
-//                }
+            StatsView()
+                .tabItem{
+                    Label("Stats", systemImage: "arrow.up.right.circle")
+                }
 //                .tabItem{
 //                    Label("Settings", systemImage: "gearshape.fill")
 //                }
