@@ -45,4 +45,9 @@ class HabitViewModel: ObservableObject {
     func deleteHabit(indexSet: IndexSet) {
         ongoingHabits.remove(atOffsets: indexSet)
     }
+    
+    func getProgression() -> Float {
+        let prc:Float = Float(doneHabits.count) / (Float(doneHabits.count) + Float(ongoingHabits.count))
+        return prc
+    }
 }

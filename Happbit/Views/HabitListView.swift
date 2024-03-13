@@ -26,17 +26,17 @@ struct HabitListView: View {
                                 .foregroundColor(Color.gray)
 
                             Rectangle() // La partie colorée de la barre de progression
-                                .frame(width: geometry.size.width * 0.5, height: 20)
+                                .frame(width: geometry.size.width * CGFloat(habitViewModel.getProgression()), height: 20)
                                 .cornerRadius(10)
                                 .foregroundColor(Color.blue) // La couleur bleue de la progression
                         }
                     }.frame(height: 20) // Fixer la hauteur de la barre de progression
-                    Text("50%")
+                    Text(String(habitViewModel.getProgression() * 100) + "%")
                 }
                 .padding(.horizontal)
-                
-                
 
+
+                
                 List {
                     Section(
                         header: Text("Ongoing habits")
@@ -47,7 +47,7 @@ struct HabitListView: View {
                             Text(habit.title)
                         }
                     }
-                
+                    
                     Section(
                         header: Text("Done habits")
                                     .font(.title3)
