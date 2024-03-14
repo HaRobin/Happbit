@@ -52,6 +52,7 @@ struct StatsView: View {
             
             VStack(spacing: 16){
                 //Picker("TimeStats", selection: )
+                //update model pour enum day -> .week:7, .month:30
                 
             }
             
