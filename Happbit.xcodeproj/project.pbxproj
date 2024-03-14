@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B406D7FC2BA315ED0075C919 /* HabitRowView.swift */; };
 		B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */; };
 		B49827EC2BA1AE580056FCF9 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49827EB2BA1AE580056FCF9 /* HabitListView.swift */; };
 		B4AD45512B987A92006EB59D /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45502B987A92006EB59D /* Habit.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B406D7FC2BA315ED0075C919 /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
 		B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHappbit.swift; sourceTree = "<group>"; };
 		B49827EB2BA1AE580056FCF9 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		B4AD45502B987A92006EB59D /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */,
 				B49827EB2BA1AE580056FCF9 /* HabitListView.swift */,
 				C05BA74D2BA1B37A00E72371 /* StatsView.swift */,
+				B406D7FC2BA315ED0075C919 /* HabitRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
 				B4AD45572B9882A7006EB59D /* HistoryViewModel.swift in Sources */,
 				C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */,
+				B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */,
 				B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */,
 				C05BA74E2BA1B37B00E72371 /* StatsView.swift in Sources */,
 				C05BA73B2B9878EF00E72371 /* HappbitApp.swift in Sources */,
