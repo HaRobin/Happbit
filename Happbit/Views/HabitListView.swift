@@ -31,30 +31,45 @@ struct HabitListView: View {
                                 .foregroundColor(Color.blue) // La couleur bleue de la progression
                         }
                     }.frame(height: 20) // Fixer la hauteur de la barre de progression
-                    Text(String(habitViewModel.getProgression() * 100) + "%")
+                    Text(String(format: "%.0f",roundf(habitViewModel.getProgression() * 100)) + "%")
                 }
                 .padding(.horizontal)
 
 
+//                  TODO : Add onDelete, onMove qctions
                 
                 List {
-                    Section(
-                        header: Text("Ongoing habits")
+                    if !habitViewModel.ongoingHabits.isEmpty{
+                        Section(
+                            header:
+                                Text("Ongoing habits")
                                     .font(.title3)
-                    ) {
-                        ForEach (habitViewModel.ongoingHabits) { habit in
-    //                        TODO : Add the habit row view
-                            Text(habit.title)
+                                
+                        ) {
+                            ForEach (habitViewModel.ongoingHabits) { habit in
+        //                        TODO : Add the habit row view
+                                HabitRowView(habit: habit)
+                                    .onTapGesture {
+                                        habitViewModel.completeHabit(habit: habit)
+                                    }
+                                
+                            }
+                            .onDelete(perform: habitViewModel.deleteHabit)
+                            .onMove(perform: habitViewModel.moveHabit)
                         }
                     }
                     
                     Section(
-                        header: Text("Done habits")
-                                    .font(.title3)
+                        header:
+                            habitViewModel.ongoingHabits.isEmpty ?
+                                Text("All habits are done")
+                                    .font(.title3) :
+                                Text("Done habits")
+                                        .font(.title3)
                     ) {
                         ForEach (habitViewModel.doneHabits) { habit in
     //                        TODO : Add the habit row view
-                            Text(habit.title)
+                            HabitRowView(habit: habit)
                         }
                     }
                 }
