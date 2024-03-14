@@ -64,6 +64,13 @@ struct StatsView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 
+                Chart(HistoryViewModel.weekHistory, id: \.date){ day in
+                        LineMark(
+                            x: .value("Date", day.date),
+                            y: .value("Task", day.habits.count)
+                        )
+                }
+                
                 
                 
             }
