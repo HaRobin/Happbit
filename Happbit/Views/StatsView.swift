@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct StatsView: View {
+    
+    @State var selectedTime: SelectedTime = .week
+    
+    @EnvironmentObject var habitViewModel: HabitViewModel
+    @EnvironmentObject var historyViewModel: HistoryViewModel
+    
     var body: some View {
         VStack(spacing: 16){
             HStack(spacing:16){
@@ -51,8 +57,14 @@ struct StatsView: View {
             .padding(.top, 40)
             
             VStack(spacing: 16){
-                //Picker("TimeStats", selection: )
-                //update model pour enum day -> .week:7, .month:30
+                Picker("Select Time", selection: $selectedTime){
+                    ForEach(SelectedTime.allCases, id: \.self){ selectedTime in
+                        Text(selectedTime.rawValue)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                
+                
                 
             }
             
