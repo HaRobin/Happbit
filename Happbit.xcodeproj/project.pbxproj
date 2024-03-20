@@ -10,10 +10,9 @@
 		B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B406D7FC2BA315ED0075C919 /* HabitRowView.swift */; };
 		B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */; };
 		B49827EC2BA1AE580056FCF9 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49827EB2BA1AE580056FCF9 /* HabitListView.swift */; };
+		B4AACE3B2BAADEB700DE33EB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AACE3A2BAADEB700DE33EB /* SettingsView.swift */; };
 		B4AD45512B987A92006EB59D /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45502B987A92006EB59D /* Habit.swift */; };
 		B4AD45532B987C30006EB59D /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45522B987C30006EB59D /* HabitViewModel.swift */; };
-		B4AD45552B9881EF006EB59D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45542B9881EF006EB59D /* History.swift */; };
-		B4AD45572B9882A7006EB59D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45562B9882A7006EB59D /* HistoryViewModel.swift */; };
 		C05BA73B2B9878EF00E72371 /* HappbitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA73A2B9878EF00E72371 /* HappbitApp.swift */; };
 		C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA73C2B9878EF00E72371 /* ContentView.swift */; };
 		C05BA73F2B9878F000E72371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05BA73E2B9878F000E72371 /* Assets.xcassets */; };
@@ -26,10 +25,9 @@
 		B406D7FC2BA315ED0075C919 /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
 		B49827E72BA1A3990056FCF9 /* NavigationHappbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHappbit.swift; sourceTree = "<group>"; };
 		B49827EB2BA1AE580056FCF9 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
+		B4AACE3A2BAADEB700DE33EB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B4AD45502B987A92006EB59D /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		B4AD45522B987C30006EB59D /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
-		B4AD45542B9881EF006EB59D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		B4AD45562B9882A7006EB59D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		C05BA7372B9878EF00E72371 /* Happbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05BA73A2B9878EF00E72371 /* HappbitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappbitApp.swift; sourceTree = "<group>"; };
 		C05BA73C2B9878EF00E72371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				B4AD45502B987A92006EB59D /* Habit.swift */,
-				B4AD45542B9881EF006EB59D /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				B4AD45522B987C30006EB59D /* HabitViewModel.swift */,
-				B4AD45562B9882A7006EB59D /* HistoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -114,6 +110,7 @@
 				B49827EB2BA1AE580056FCF9 /* HabitListView.swift */,
 				C05BA74D2BA1B37A00E72371 /* StatsView.swift */,
 				B406D7FC2BA315ED0075C919 /* HabitRowView.swift */,
+				B4AACE3A2BAADEB700DE33EB /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,14 +188,13 @@
 				B49827EC2BA1AE580056FCF9 /* HabitListView.swift in Sources */,
 				B4AD45512B987A92006EB59D /* Habit.swift in Sources */,
 				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
-				B4AD45572B9882A7006EB59D /* HistoryViewModel.swift in Sources */,
 				C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */,
 				B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */,
 				B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */,
 				C05BA74E2BA1B37B00E72371 /* StatsView.swift in Sources */,
 				C05BA73B2B9878EF00E72371 /* HappbitApp.swift in Sources */,
+				B4AACE3B2BAADEB700DE33EB /* SettingsView.swift in Sources */,
 				B4AD45532B987C30006EB59D /* HabitViewModel.swift in Sources */,
-				B4AD45552B9881EF006EB59D /* History.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

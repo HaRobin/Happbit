@@ -12,7 +12,7 @@ struct HabitListView: View {
     @EnvironmentObject var habitViewModel : HabitViewModel
     
     var body: some View {
-        NavigationView {
+        
 //            AXChartDescriptor à utilisé pour faire les stats
             VStack {
                 // Barre de progression
@@ -89,7 +89,6 @@ struct HabitListView: View {
                 }
             }
 
-        }
     }
 }
 

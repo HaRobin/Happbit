@@ -12,6 +12,7 @@ struct HappbitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(HabitViewModel())
         }
     }
 }
