@@ -12,8 +12,8 @@ struct HabitListView: View {
     @EnvironmentObject var habitViewModel : HabitViewModel
     
     var body: some View {
-        
-//            AXChartDescriptor à utilisé pour faire les stats
+        NavigationView {
+            //            AXChartDescriptor à utilisé pour faire les stats
             VStack {
                 // Barre de progression
                 HStack {
@@ -24,7 +24,7 @@ struct HabitListView: View {
                                 .cornerRadius(10)
                                 .opacity(0.3)
                                 .foregroundColor(Color.gray)
-
+                            
                             Rectangle() // La partie colorée de la barre de progression
                                 .frame(width: geometry.size.width * CGFloat(habitViewModel.getProgression()), height: 20)
                                 .cornerRadius(10)
@@ -34,20 +34,21 @@ struct HabitListView: View {
                     Text(String(format: "%.0f",roundf(habitViewModel.getProgression() * 100)) + "%")
                 }
                 .padding(.horizontal)
-
-
-//                  TODO : Add onDelete, onMove qctions
+                .padding(.top)
+                
+                
+                //                  TODO : Add onDelete, onMove qctions
                 
                 List {
                     if !habitViewModel.ongoingHabits.isEmpty{
                         Section(
                             header:
                                 Text("Ongoing habits")
-                                    .font(.title3)
-                                
+                                .font(.title3)
+                            
                         ) {
                             ForEach (habitViewModel.ongoingHabits) { habit in
-        //                        TODO : Add the habit row view
+                                //                        TODO : Add the habit row view
                                 HabitRowView(habit: habit)
                                     .onTapGesture {
                                         habitViewModel.completeHabit(habit: habit)
@@ -62,13 +63,13 @@ struct HabitListView: View {
                     Section(
                         header:
                             habitViewModel.ongoingHabits.isEmpty ?
-                                Text("All habits are done")
-                                    .font(.title3) :
-                                Text("Done habits")
-                                        .font(.title3)
+                        Text("All habits are done")
+                            .font(.title3) :
+                            Text("Done habits")
+                            .font(.title3)
                     ) {
                         ForEach (habitViewModel.doneHabits) { habit in
-    //                        TODO : Add the habit row view
+                            //                        TODO : Add the habit row view
                             HabitRowView(habit: habit)
                         }
                     }
@@ -88,7 +89,7 @@ struct HabitListView: View {
                     NavigationLink("Add", destination: AddHabitView())
                 }
             }
-
+        }
     }
 }
 

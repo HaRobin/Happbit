@@ -10,10 +10,8 @@ import SwiftUI
 struct NavigationHappbit: View {
     var body: some View {
         TabView {
-            NavigationView {
                 HabitListView()
-                    .environmentObject(HabitViewModel())
-                }
+                .environmentObject(HabitViewModel())
                 .tabItem{
                     Label("Home", systemImage: "house.fill")
                 }
@@ -21,12 +19,11 @@ struct NavigationHappbit: View {
                 .tabItem{
                     Label("Stats", systemImage: "arrow.up.right.circle")
                 }
-            NavigationView {
-                SettingsView()
-                }
-                .tabItem{
-                    Label("Settings", systemImage: "gearshape.fill")
-                }
+            
+            SettingsView()
+            .tabItem{
+                Label("Settings", systemImage: "gearshape.fill")
+            }
         }
     }
 }
