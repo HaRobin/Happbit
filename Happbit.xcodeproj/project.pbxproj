@@ -19,6 +19,7 @@
 		C05BA7422B9878F000E72371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05BA7412B9878F000E72371 /* Preview Assets.xcassets */; };
 		C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */; };
 		C05BA74E2BA1B37B00E72371 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA74D2BA1B37A00E72371 /* StatsView.swift */; };
+		C08A28362BAAEB0A00BA9404 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08A28352BAAEB0A00BA9404 /* HistoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		C05BA7412B9878F000E72371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		C05BA74D2BA1B37A00E72371 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		C08A28352BAAEB0A00BA9404 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B4AD45522B987C30006EB59D /* HabitViewModel.swift */,
+				C08A28352BAAEB0A00BA9404 /* HistoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				B49827EC2BA1AE580056FCF9 /* HabitListView.swift in Sources */,
 				B4AD45512B987A92006EB59D /* Habit.swift in Sources */,
+				C08A28362BAAEB0A00BA9404 /* HistoryViewModel.swift in Sources */,
 				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
 				C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */,
 				B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */,
