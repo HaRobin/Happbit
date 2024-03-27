@@ -7,9 +7,9 @@
 
 import Foundation
 
-class HabitViewModel: ObservableObject {
+class HistoryViewModel: ObservableObject {
  
-    @Published var weekHistory: [Date: Int]
+    @Published var weekHistory: [String: Int] = [:]
     
     init() {
         getHistories()
@@ -26,10 +26,10 @@ class HabitViewModel: ObservableObject {
             for (_, hbDate) in habit.history.enumerated(){
                 let hbDateInt = Int(hbDate.timeIntervalSince1970)
                 if((currentDateInt - hbDateInt) <= (86400 * 7)){
-                    if(weekHistory[dateFormatter.date(from:dateFormatter.string(from:hbDate))] != nil){
-                        weekHistory[hbDate]! += 1
+                    if(weekHistory[dateFormatter.string(from:hbDate)] != nil){
+                        weekHistory[dateFormatter.string(from:hbDate)]! += 1
                     } else {
-                        weekHistory[hbDate] = 1
+                        weekHistory[dateFormatter.string(from:hbDate)] = 1
                     }
                 }
             }
