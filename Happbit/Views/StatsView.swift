@@ -12,7 +12,7 @@ struct StatsView: View {
     
     @State var selectedTime: SelectedTime = .week
     
-    @EnvironmentObject var habitViewModel: HabitViewModel
+    @EnvironmentObject var historyViewModel: HistoryViewModel
     
     var body: some View {
         VStack(spacing: 16){
@@ -64,12 +64,12 @@ struct StatsView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 
-//                Chart(HistoryViewModel.weekHistory, id: \.date){ day in
-//                        LineMark(
-//                            x: .value("Date", day.date),
-//                            y: .value("Task", day.habits.count)
-//                        )
-//                }
+                Chart(Array(historyViewModel.weekHistory.keys), id: \.self){ keyDay in
+                        LineMark(
+                            x: .value("Date", keyDay),
+                            y: .value("Task", historyViewModel.weekHistory[keyDay] ?? 0)
+                        )
+                }
                 
                 
                 
@@ -83,5 +83,6 @@ struct StatsView: View {
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         StatsView()
+            .environmentObject(HistoryViewModel())
     }
 }
