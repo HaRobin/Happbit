@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @EnvironmentObject var notificationViewModel: NotificationViewModel
+    
     @State var isPermissionGranted: Bool = false
-    @State var nbNutification: Int = 1
+    @State var nbNotification: Int = 1
     
     var body: some View {
         
@@ -39,13 +41,18 @@ struct SettingsView: View {
                         
                         Spacer()
                         
-                        TextField("Enter expense amount", value: $nbNutification, formatter: NumberFormatter())
+                        TextField("Enter expense amount", value: $nbNotification, formatter: NumberFormatter())
                             .keyboardType(.numberPad)
                             .padding(.horizontal)
-                            .frame(width: 40, height: 30)
+                            .frame(width: 100, height: 30)
                             .background(Color(.systemGray5))
                             .cornerRadius(10)
-                        
+                            .onSubmit {
+                                notificationViewModel.setupNotifications(count: nbNotification)
+                                print("test")
+                            }
+                            
+                            
                         Spacer()
                     }
                 }
@@ -53,21 +60,21 @@ struct SettingsView: View {
                 
                 Spacer()
              
-//                Button("test notification") {
-//                    let content = UNMutableNotificationContent()
-//                    content.title = "Happbit"
-//                    content.subtitle = "Do your task"
-//                    content.sound = UNNotificationSound.default
-//
-//                    // show this notification five seconds from now
-//                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-//
-//                    // choose a random identifier
-//                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//
-//                    // add our notification request
-//                    UNUserNotificationCenter.current().add(request)
-//                }
+                Button("test notification") {
+                    let content = UNMutableNotificationContent()
+                    content.title = "Happbit"
+                    content.subtitle = "Do your task"
+                    content.sound = UNNotificationSound.default
+
+                    // show this notification five seconds from now
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+                    // choose a random identifier
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                    // add our notification request
+                    UNUserNotificationCenter.current().add(request)
+                }
                 
                 Spacer()
                 
@@ -91,6 +98,7 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
        
         SettingsView()
+            .environmentObject(NotificationViewModel())
 
     }
 }
