@@ -32,7 +32,6 @@ class HabitViewModel: ObservableObject {
         for (index, hb) in ongoingHabits.enumerated() {
             if habit.id == hb.id {
                 ongoingHabits[index].status.toggle()
-                ongoingHabits[index].history.append(Date())
                 doneHabits.append(ongoingHabits[index])
                 ongoingHabits.remove(at: index)
             }
@@ -40,7 +39,7 @@ class HabitViewModel: ObservableObject {
     }
     
     func addHabit(title: String) {
-        ongoingHabits.append(Habit(status: false, title: title, history: [Date()]))
+        ongoingHabits.append(Habit(status: false, title: title))
     }
     
     func deleteHabit(indexSet: IndexSet) {

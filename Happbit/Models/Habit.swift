@@ -19,15 +19,13 @@ struct Habit: Identifiable {
     var status: Bool
     var title: String
     
-    var history: [Date] 
-    
     static var testData = [
-        Habit(status: false, title: "Read 5 minutes", history: [Date()-2, Date()-1, Date()]),
-        Habit(status: true, title: "Wake up", history: [Date()-2, Date()-1, Date()]),
-        Habit(status: false, title: "Walk 5 minutes", history: [Date()-2, Date()-1, Date()]),
-        Habit(status: true, title: "Work 2 minutes", history: [Date()-2, Date()-1, Date()]),
-        Habit(status: false, title: "Do 5 pushup", history: [Date()-2, Date()-1, Date()]),
-        Habit(status: true, title: "Don't eat more than 20 bags of chips", history: [Date()-2, Date()-1, Date()])
+        Habit(status: false, title: "Read 5 minutes"),
+        Habit(status: true, title: "Wake up"),
+        Habit(status: false, title: "Walk 5 minutes"),
+        Habit(status: true, title: "Work 2 minutes"),
+        Habit(status: false, title: "Do 5 pushup"),
+        Habit(status: true, title: "Don't eat more than 20 bags of chips")
     ]
     
     

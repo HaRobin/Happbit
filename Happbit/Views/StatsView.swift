@@ -63,12 +63,28 @@ struct StatsView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
-                Chart(Array(historyViewModel.weekHistory.keys), id: \.self){ keyDay in
+                switch selectedTime {
+                case .week:
+                    Chart(Array(historyViewModel.weekHistoryDone.keys.sorted()), id: \.self){ keyDay in
+                        BarMark(
+                            x: .value("Date", keyDay),
+                            y: .value("Task Done", historyViewModel.weekHistoryDone[keyDay] ?? 0)
+                        )
+                    }
+                case .month:
+                    Chart(Array(historyViewModel.monthHistoryDone.keys.sorted()), id: \.self){ keyDay in
                         LineMark(
                             x: .value("Date", keyDay),
-                            y: .value("Task", historyViewModel.weekHistory[keyDay] ?? 0)
+                            y: .value("Task", historyViewModel.monthHistoryDone[keyDay] ?? 0)
                         )
+                    }
+                case .all:
+                    Chart(Array(historyViewModel.allHistoryDone.keys.sorted()), id: \.self){ keyDay in
+                        LineMark(
+                            x: .value("Date", keyDay),
+                            y: .value("Task", historyViewModel.allHistoryDone[keyDay] ?? 0)
+                        )
+                    }
                 }
                 
                 

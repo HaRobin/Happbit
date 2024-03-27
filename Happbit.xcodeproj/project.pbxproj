@@ -20,6 +20,7 @@
 		C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */; };
 		C05BA74E2BA1B37B00E72371 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA74D2BA1B37A00E72371 /* StatsView.swift */; };
 		C08A28362BAAEB0A00BA9404 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08A28352BAAEB0A00BA9404 /* HistoryViewModel.swift */; };
+		C0A63EAF2BB427E500851A9A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A63EAE2BB427E500851A9A /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C05BA74B2BA1AAA200E72371 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		C05BA74D2BA1B37A00E72371 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		C08A28352BAAEB0A00BA9404 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		C0A63EAE2BB427E500851A9A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B4AD45502B987A92006EB59D /* Habit.swift */,
+				C0A63EAE2BB427E500851A9A /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
 				C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */,
 				B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */,
+				C0A63EAF2BB427E500851A9A /* History.swift in Sources */,
 				B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */,
 				C05BA74E2BA1B37B00E72371 /* StatsView.swift in Sources */,
 				C05BA73B2B9878EF00E72371 /* HappbitApp.swift in Sources */,
