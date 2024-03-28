@@ -63,27 +63,31 @@ struct StatsView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                
                 switch selectedTime {
                 case .week:
-                    Chart(Array(historyViewModel.weekHistoryDone.keys.sorted()), id: \.self){ keyDay in
+                    Chart(historyViewModel.weekHistory){
                         BarMark(
-                            x: .value("Date", keyDay),
-                            y: .value("Task Done", historyViewModel.weekHistoryDone[keyDay] ?? 0)
+                            x: .value("Date", $0.date),
+                            y: .value("Task", $0.nb)
                         )
+                        .foregroundStyle(by: .value("Task Status", $0.status))
                     }
                 case .month:
-                    Chart(Array(historyViewModel.monthHistoryDone.keys.sorted()), id: \.self){ keyDay in
-                        LineMark(
-                            x: .value("Date", keyDay),
-                            y: .value("Task", historyViewModel.monthHistoryDone[keyDay] ?? 0)
+                    Chart(historyViewModel.monthHistory){
+                        BarMark(
+                            x: .value("Date", $0.date),
+                            y: .value("Task", $0.nb)
                         )
+                        .foregroundStyle(by: .value("Task Status", $0.status))
                     }
                 case .all:
-                    Chart(Array(historyViewModel.allHistoryDone.keys.sorted()), id: \.self){ keyDay in
-                        LineMark(
-                            x: .value("Date", keyDay),
-                            y: .value("Task", historyViewModel.allHistoryDone[keyDay] ?? 0)
+                    Chart(historyViewModel.allHistory){
+                        BarMark(
+                            x: .value("Date", $0.date),
+                            y: .value("Task", $0.nb)
                         )
+                        .foregroundStyle(by: .value("Task Status", $0.status))
                     }
                 }
                 

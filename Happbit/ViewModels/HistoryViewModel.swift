@@ -9,20 +9,42 @@ import Foundation
 
 class HistoryViewModel: ObservableObject {
  
-    @Published var weekHistoryDone: [String: Int] = [:]
-    @Published var weekHistoryOnGoing: [String: Int] = [:]
+    @Published var weekHistory: [HistoryChart] = []
+    var tempWeekHistory: [HistoryChart] = []
     
-    @Published var monthHistoryDone: [String: Int] = [:]
-    @Published var monthHistoryOnGoing: [String: Int] = [:]
+    @Published var monthHistory: [HistoryChart] = []
+    var tempMonthHistory: [HistoryChart] = []
     
-    @Published var allHistoryDone: [String: Int] = [:]
-    @Published var allHistoryOnGoing: [String: Int] = [:]
+    @Published var allHistory: [HistoryChart] = []
+    var tempAllHistory: [HistoryChart] = []
     
     init() {
         getHistories()
     }
     
+    func sortedHistory(history: [HistoryChart])-> [HistoryChart]{
+        var sortedHistory: [HistoryChart] = []
+        for (_, elem) in history.enumerated(){
+            if(elem.status == "Done"){
+                sortedHistory.append(elem)
+            }
+        }
+        for (_, elem) in history.enumerated(){
+            if(elem.status == "Not Done"){
+                sortedHistory.append(elem)
+            }
+        }
+        return sortedHistory
+    }
+    
     func getHistories(){
+        
+        //clean all
+        weekHistory.removeAll()
+        monthHistory.removeAll()
+        allHistory.removeAll()
+        
+        //init date formatter
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d.M.yyyy"
         let monthFormatter = DateFormatter()
@@ -34,59 +56,20 @@ class HistoryViewModel: ObservableObject {
         for (_, history) in History.testData.enumerated() {
             let historyDateInt = Int(history.date.timeIntervalSince1970)
             for (_, habit) in history.habits.enumerated(){
-                // all
-                // done
-                if(habit.status){
-                    if(allHistoryDone[monthFormatter.string(from:history.date)] != nil){
-                        allHistoryDone[monthFormatter.string(from:history.date)]! += 1
-                    } else {
-                        allHistoryDone[monthFormatter.string(from:history.date)] = 1
-                    }
-                    // onGoing
-                }else{
-                    if(allHistoryOnGoing[monthFormatter.string(from:history.date)] != nil){
-                        allHistoryOnGoing[monthFormatter.string(from:history.date)]! += 1
-                    } else {
-                        allHistoryOnGoing[monthFormatter.string(from:history.date)] = 1
-                    }
-                }
-                // month
+                // fill
+                tempAllHistory.append(HistoryChart(date:monthFormatter.string(from:history.date),nb:1,status:(habit.status) ? "Done" : "Not Done"))
                 if(monthFormatter.string(from: currentDate) == monthFormatter.string(from: history.date)){
-                    // done
-                    if(habit.status){
-                        if(monthHistoryDone[dateFormatter.string(from:history.date)] != nil){
-                            monthHistoryDone[dateFormatter.string(from:history.date)]! += 1
-                        } else {
-                            monthHistoryDone[dateFormatter.string(from:history.date)] = 1
-                        }
-                        // onGoing
-                    }else{
-                        if(monthHistoryOnGoing[dateFormatter.string(from:history.date)] != nil){
-                            monthHistoryOnGoing[dateFormatter.string(from:history.date)]! += 1
-                        } else {
-                            monthHistoryOnGoing[dateFormatter.string(from:history.date)] = 1
-                        }
-                    }
+                    tempMonthHistory.append(HistoryChart(date:dateFormatter.string(from:history.date),nb:1,status:(habit.status) ? "Done" : "Not Done"))
                 }
-                
-                // week
                 if((currentDateInt - historyDateInt) <= (86400 * 7)){
-                    // done
-                    if(habit.status){
-                        if(weekHistoryDone[dateFormatter.string(from:history.date)] != nil){
-                            weekHistoryDone[dateFormatter.string(from:history.date)]! += 1
-                        } else {
-                            weekHistoryDone[dateFormatter.string(from:history.date)] = 1
-                        }
-                        // onGoing
-                    }else{
-                        if(weekHistoryOnGoing[dateFormatter.string(from:history.date)] != nil){
-                            weekHistoryOnGoing[dateFormatter.string(from:history.date)]! += 1
-                        } else {
-                            weekHistoryOnGoing[dateFormatter.string(from:history.date)] = 1
-                        }
-                    }
+                    tempWeekHistory.append(HistoryChart(date:dateFormatter.string(from:history.date),nb:1,status:(habit.status) ? "Done" : "Not Done"))
                 }
+                // sort
+                allHistory = sortedHistory(history: tempAllHistory)
+                monthHistory = sortedHistory(history: tempMonthHistory)
+                weekHistory = sortedHistory(history: tempWeekHistory)
+                
+                
             }
         }
     }
