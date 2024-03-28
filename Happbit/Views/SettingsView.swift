@@ -47,9 +47,8 @@ struct SettingsView: View {
                             .frame(width: 100, height: 30)
                             .background(Color(.systemGray5))
                             .cornerRadius(10)
-                            .onSubmit {
-                                notificationViewModel.setupNotifications(count: nbNotification)
-                                print("test")
+                            .onChange(of: nbNotification) { newValue in
+                                notificationViewModel.setupNotifications(count: newValue)
                             }
                             
                             
@@ -109,7 +108,7 @@ struct SettingsView_Previews: PreviewProvider {
 //content.sound = UNNotificationSound.default
 //
 //// Set up the date components for the time you want the notification to trigger
-//var dateComponents = DateComponents()
+//var dateComponents =  ()
 //dateComponents.hour = 8  // 8 AM
 //dateComponents.minute = 0
 //

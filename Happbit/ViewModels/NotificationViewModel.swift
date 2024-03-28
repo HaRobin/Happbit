@@ -17,14 +17,14 @@ class NotificationViewModel: ObservableObject {
     }
     
     func setupNotifications(count: Int) {
+//        print("test")
         clearNotification()
-        generateNotifications(count: 1)
+        generateNotifications(count: count)
         scheduleNotifications()
     }
     
     func scheduleNotifications() {
         for (_, notif ) in Notifications.enumerated() {
-            
             // Create the trigger for the notification
             let trigger = UNCalendarNotificationTrigger(dateMatching: notif.dateComponents, repeats: true)
             
@@ -42,11 +42,14 @@ class NotificationViewModel: ObservableObject {
     
     func generateNotifications(count: Int){
         if (count > 2) {
-            let interval: Int = ((18-8) * 3600) / count - 1
-            for i in 1..<count-2 {
-                let scd = 8 * 3600 + i * interval
-                let hour = scd / 3600
-                let minute = scd % 3600
+            let interval: Double = Double(((18-8) * 3600) / count)
+            for i in 1..<count-1 {
+                let scd : Double = Double(i) * interval
+                let hour : Int = Int((8 * 3600 + scd) / 3600)
+                let minute : Int = Int(scd.truncatingRemainder(dividingBy: 3600) / 60)
+                print("---")
+                print(hour)
+                print(minute)
                 Notifications.append(createNotification(hour: hour, minute: minute))
             }
         }
