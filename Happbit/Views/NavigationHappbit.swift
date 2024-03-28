@@ -21,9 +21,10 @@ struct NavigationHappbit: View {
                 }
             
             SettingsView()
-            .tabItem{
-                Label("Settings", systemImage: "gearshape.fill")
-            }
+                .environmentObject(NotificationViewModel())
+                .tabItem{
+                    Label("Settings", systemImage: "gearshape.fill")
+                }
         }
     }
 }

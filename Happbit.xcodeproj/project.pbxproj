@@ -14,6 +14,8 @@
 		B4AD45512B987A92006EB59D /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45502B987A92006EB59D /* Habit.swift */; };
 		B4AD45532B987C30006EB59D /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD45522B987C30006EB59D /* HabitViewModel.swift */; };
 		C0247B992BB5ACB800A962C3 /* HistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0247B982BB5ACB800A962C3 /* HistoryChart.swift */; };
+		B4D7903F2BB41BC800D5DBA6 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7903E2BB41BC800D5DBA6 /* NotificationViewModel.swift */; };
+		B4D790412BB41BFB00D5DBA6 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D790402BB41BFB00D5DBA6 /* Notification.swift */; };
 		C05BA73B2B9878EF00E72371 /* HappbitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA73A2B9878EF00E72371 /* HappbitApp.swift */; };
 		C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BA73C2B9878EF00E72371 /* ContentView.swift */; };
 		C05BA73F2B9878F000E72371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05BA73E2B9878F000E72371 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		B4AD45502B987A92006EB59D /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		B4AD45522B987C30006EB59D /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		C0247B982BB5ACB800A962C3 /* HistoryChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryChart.swift; sourceTree = "<group>"; };
+		B4D7903E2BB41BC800D5DBA6 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		B4D790402BB41BFB00D5DBA6 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C05BA7372B9878EF00E72371 /* Happbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05BA73A2B9878EF00E72371 /* HappbitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappbitApp.swift; sourceTree = "<group>"; };
 		C05BA73C2B9878EF00E72371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				B4AD45502B987A92006EB59D /* Habit.swift */,
 				C0A63EAE2BB427E500851A9A /* History.swift */,
 				C0247B982BB5ACB800A962C3 /* HistoryChart.swift */,
+				B4D790402BB41BFB00D5DBA6 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			children = (
 				B4AD45522B987C30006EB59D /* HabitViewModel.swift */,
 				C08A28352BAAEB0A00BA9404 /* HistoryViewModel.swift */,
+				B4D7903E2BB41BC800D5DBA6 /* NotificationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -200,8 +206,10 @@
 				C08A28362BAAEB0A00BA9404 /* HistoryViewModel.swift in Sources */,
 				C05BA74C2BA1AAA200E72371 /* AddHabitView.swift in Sources */,
 				C05BA73D2B9878EF00E72371 /* ContentView.swift in Sources */,
+				B4D7903F2BB41BC800D5DBA6 /* NotificationViewModel.swift in Sources */,
 				B406D7FD2BA315ED0075C919 /* HabitRowView.swift in Sources */,
 				C0A63EAF2BB427E500851A9A /* History.swift in Sources */,
+				B4D790412BB41BFB00D5DBA6 /* Notification.swift in Sources */,
 				B49827E82BA1A3990056FCF9 /* NavigationHappbit.swift in Sources */,
 				C05BA74E2BA1B37B00E72371 /* StatsView.swift in Sources */,
 				C05BA73B2B9878EF00E72371 /* HappbitApp.swift in Sources */,
