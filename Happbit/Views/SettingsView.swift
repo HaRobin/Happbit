@@ -49,6 +49,11 @@ struct SettingsView: View {
                             .cornerRadius(10)
                             .onChange(of: nbNotification) { newValue in
                                 notificationViewModel.setupNotifications(count: newValue)
+//                                UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+//                                    for request in requests {
+//                                        print(request)
+//                                    }
+                                }
                             }
                             
                             

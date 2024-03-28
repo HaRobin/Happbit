@@ -41,6 +41,7 @@ class NotificationViewModel: ObservableObject {
     }
     
     func generateNotifications(count: Int){
+        print(count)
         if (count > 2) {
             let interval: Double = Double(((18-8) * 3600) / count)
             for i in 1..<count-1 {
@@ -62,6 +63,7 @@ class NotificationViewModel: ObservableObject {
     }
     
     func clearNotification() {
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: Notifications.map{$0.uuid})
         Notifications.removeAll()
     }
