@@ -18,8 +18,37 @@ class HistoryViewModel: ObservableObject {
     @Published var allHistory: [HistoryChart] = []
     var tempAllHistory: [HistoryChart] = []
     
+    @Published var bestStreak: Int = 13
+    @Published var currentStreak: Int = 0
+    
     init() {
         getHistories()
+        getStreaks()
+    }
+    
+    func getStreaks(){
+        var onStreaks: Bool = true
+        var nbStreak: Int = 0
+        var indexHisto: Int = 0
+        while (onStreaks){
+            if(indexHisto >= History.testData.count){
+                onStreaks = false
+            } else {
+                for (_,habit) in History.testData[indexHisto].habits.enumerated(){
+                    if(!habit.status){
+                        onStreaks = false
+                    }
+                }
+                if(onStreaks){
+                    nbStreak+=1
+                    indexHisto+=1
+                }
+            }
+        }
+        if(nbStreak > bestStreak){
+            bestStreak = nbStreak
+        }
+        currentStreak = nbStreak
     }
     
     func sortedHistory(history: [HistoryChart])-> [HistoryChart]{
@@ -48,7 +77,7 @@ class HistoryViewModel: ObservableObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d.M.yyyy"
         let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "M"
+        monthFormatter.dateFormat = "M.yyyy"
         
         let currentDate = Date()
         let currentDateInt = Int(currentDate.timeIntervalSince1970)

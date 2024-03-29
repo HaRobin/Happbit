@@ -29,4 +29,29 @@ struct Habit: Identifiable {
     ]
     
     
+    static var data2sur3 = [
+        Habit(status: true, title: "random"),
+        Habit(status: false, title: "random"),
+        Habit(status: true, title: "random")
+    ]
+    
+    static var data5sur5 = [
+        Habit(status: true, title: "random"),
+        Habit(status: true, title: "random"),
+        Habit(status: true, title: "random"),
+        Habit(status: true, title: "random"),
+        Habit(status: true, title: "random")
+    ]
+    
+    static var data0sur1 = [
+        Habit(status: false, title: "random")
+    ]
+    
+    static var data3sur4 = [
+        Habit(status: true, title: "random"),
+        Habit(status: false, title: "random"),
+        Habit(status: true, title: "random"),
+        Habit(status: true, title: "random")
+    ]
+    
 }

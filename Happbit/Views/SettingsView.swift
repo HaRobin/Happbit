@@ -11,7 +11,7 @@ struct SettingsView: View {
     
     @EnvironmentObject var notificationViewModel: NotificationViewModel
     
-    @State var isPermissionGranted: Bool = false
+    @State var isPermissionGranted: Bool = true
     @State var nbNotification: Int = 1
     
     var body: some View {
@@ -41,20 +41,34 @@ struct SettingsView: View {
                         
                         Spacer()
                         
-                        TextField("Enter expense amount", value: $nbNotification, formatter: NumberFormatter())
-                            .keyboardType(.numberPad)
-                            .padding(.horizontal)
-                            .frame(width: 100, height: 30)
-                            .background(Color(.systemGray5))
-                            .cornerRadius(10)
-                            .onChange(of: nbNotification) { newValue in
-                                notificationViewModel.setupNotifications(count: newValue)
-//                                UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
-//                                    for request in requests {
-//                                        print(request)
-//                                    }
-//                                }
+                        Picker("Number of notification :", selection: $nbNotification) {
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                        }
+                        .onChange(of: nbNotification) { newValue in
+                            notificationViewModel.setupNotifications(count: newValue)
+                            UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+                                for request in requests {
+                                    print(request)
+                                }
+                                print(newValue)
                             }
+                        }
+                        
+//                        TextField("Enter expense amount", value: $nbNotification, formatter: NumberFormatter())
+//                            .keyboardType(.numberPad)
+//                            .padding(.horizontal)
+//                            .frame(width: 100, height: 30)
+//                            .background(Color(.systemGray5))
+//                            .cornerRadius(10)
+//                            .onChange(of: nbNotification) { newValue in
+//                                notificationViewModel.setupNotifications(count: newValue)
+////                                UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+////                                    for request in requests {
+////                                        print(request)
+////                                    }
+////                                }
+//                            }
                             
                             
                         Spacer()

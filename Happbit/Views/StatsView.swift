@@ -30,14 +30,14 @@ struct StatsView: View {
             HStack(spacing: 16){
                 Spacer()
                 VStack(spacing: 16){
-                    Text("3")
+                    Text(String(historyViewModel.currentStreak))
                         .font(.title2)
                     Text("Current")
                         .font(.title2)
                 }
                 Spacer()
                 VStack(spacing: 16){
-                    Text("15")
+                    Text(String(historyViewModel.bestStreak))
                         .font(.title2)
                     Text("Best")
                         .font(.title2)
@@ -66,7 +66,9 @@ struct StatsView: View {
                 
                 switch selectedTime {
                 case .week:
-                    Chart(historyViewModel.weekHistory){
+                    Chart(historyViewModel.weekHistory.sorted(by: { HistoryChart1, HistoryChart2 in
+                        HistoryChart1.date > HistoryChart2.date
+                    })){
                         BarMark(
                             x: .value("Date", $0.date),
                             y: .value("Task", $0.nb)
@@ -74,7 +76,9 @@ struct StatsView: View {
                         .foregroundStyle(by: .value("Task Status", $0.status))
                     }
                 case .month:
-                    Chart(historyViewModel.monthHistory){
+                    Chart(historyViewModel.monthHistory.sorted(by: { HistoryChart1, HistoryChart2 in
+                        HistoryChart1.date > HistoryChart2.date
+                    })){
                         BarMark(
                             x: .value("Date", $0.date),
                             y: .value("Task", $0.nb)
@@ -82,7 +86,9 @@ struct StatsView: View {
                         .foregroundStyle(by: .value("Task Status", $0.status))
                     }
                 case .all:
-                    Chart(historyViewModel.allHistory){
+                    Chart(historyViewModel.allHistory.sorted(by: { HistoryChart1, HistoryChart2 in
+                        HistoryChart1.date > HistoryChart2.date
+                    })){
                         BarMark(
                             x: .value("Date", $0.date),
                             y: .value("Task", $0.nb)
@@ -90,10 +96,9 @@ struct StatsView: View {
                         .foregroundStyle(by: .value("Task Status", $0.status))
                     }
                 }
-                
-                
-                
+             
             }
+            .padding(.horizontal)
             
             Spacer()
         }

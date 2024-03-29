@@ -13,6 +13,7 @@ struct HappbitApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(HabitViewModel())
+                .environmentObject(HistoryViewModel())
         }
     }
 }
