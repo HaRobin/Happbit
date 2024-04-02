@@ -14,9 +14,9 @@ struct History: Identifiable {
     var habits: [Habit]
     
     static var testData = [
-        History(date: Date()-86400, habits: Habit.data5sur5),
+        History(date: Date()-86400*11, habits: Habit.data3sur4),
         History(date: Date()-86400*2, habits: Habit.data5sur5),
-        History(date: Date()-86400*3, habits: Habit.data3sur4),
+        History(date: Date()-86400*3, habits: Habit.data5sur5),
         History(date: Date()-86400*4, habits: Habit.data0sur1),
         History(date: Date()-86400*5, habits: Habit.data2sur3),
         History(date: Date()-86400*6, habits: Habit.data3sur4),
