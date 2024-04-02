@@ -10,7 +10,7 @@ import SwiftUI
 struct NavigationHappbit: View {
     var body: some View {
         TabView {
-                HabitListView()
+            HabitListView()
                 .environmentObject(HabitViewModel())
                 .tabItem{
                     Label("Home", systemImage: "house.fill")
